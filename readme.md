@@ -1,4 +1,4 @@
-
+﻿
 # SQL 정보
 
 ## 사양
@@ -23,7 +23,7 @@
 ## 현재까지의 ERD 구성 및 설명
 
 ### ERD
-![enter image description here](https://raw.githubusercontent.com/HEROHJK/Deuluwa/master/SQL/deuluwadb.png)
+![enter image description here](https://raw.githubusercontent.com/Deuluwa/DB/master/deuluwadb.png)
 
 ### 사용자(user)
 |물리 이름|논리 이름|비고|

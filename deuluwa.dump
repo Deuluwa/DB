@@ -668,7 +668,9 @@ CREATE VIEW public.courseinfoview AS
     cv.starttime,
     cv.coursetime,
     l.name AS roomname,
-    cv.classday
+    cv.classday,
+    l.index AS lectureroomindex,
+    uv.id AS teacherindex
    FROM ((public.courseview cv
      JOIN public.userview uv ON ((cv.lectureindex = uv.id)))
      JOIN public.lectureroom l ON ((cv.lectureroomindex = l.index)));
@@ -1061,9 +1063,122 @@ ALTER TABLE ONLY public.notice ALTER COLUMN index SET DEFAULT nextval('public.no
 --
 
 COPY public.attendancerecord (index, userid, courseid, checkdate, checktime) FROM stdin;
-1	herohjk	1	2018-09-03	1628 
-2	herohjk	1	2018-09-05	1635 
-3	herohjk	1	2018-09-07	1805 
+63	testuser	17	2018-10-17	1300 
+103	herohjk3	18	2018-11-02	1300 
+9	testuser	17	2018-09-05	1200 
+4	herohjk	17	2018-09-03	1230 
+7	herohjk	17	2018-09-05	1260 
+5	herohjk2	17	2018-09-03	1300 
+10	herohjk	17	2018-09-07	1300 
+11	herohjk2	17	2018-09-07	1300 
+12	testuser	17	2018-09-07	1300 
+13	herohjk	17	2018-09-10	1300 
+14	herohjk2	17	2018-09-10	1300 
+15	testuser	17	2018-09-10	1300 
+16	herohjk	17	2018-09-12	1300 
+17	herohjk2	17	2018-09-12	1300 
+18	testuser	17	2018-09-12	1300 
+19	herohjk	17	2018-09-14	1300 
+20	herohjk2	17	2018-09-14	1300 
+21	testuser	17	2018-09-14	1300 
+22	herohjk	17	2018-09-17	1300 
+23	herohjk2	17	2018-09-17	1300 
+24	testuser	17	2018-09-17	1300 
+25	herohjk	17	2018-09-19	1300 
+26	herohjk2	17	2018-09-19	1300 
+27	testuser	17	2018-09-19	1300 
+28	herohjk	17	2018-09-21	1300 
+29	herohjk2	17	2018-09-21	1300 
+30	testuser	17	2018-09-21	1300 
+31	herohjk	17	2018-09-24	1300 
+32	herohjk2	17	2018-09-24	1300 
+33	testuser	17	2018-09-24	1300 
+34	herohjk	17	2018-09-26	1300 
+35	herohjk2	17	2018-09-26	1300 
+36	testuser	17	2018-09-26	1300 
+37	herohjk	17	2018-09-28	1300 
+38	herohjk2	17	2018-09-28	1300 
+39	testuser	17	2018-09-28	1300 
+40	herohjk	17	2018-10-01	1300 
+41	herohjk2	17	2018-10-01	1300 
+42	testuser	17	2018-10-01	1300 
+43	herohjk	17	2018-10-03	1300 
+44	herohjk2	17	2018-10-03	1300 
+45	testuser	17	2018-10-03	1300 
+46	herohjk	17	2018-10-05	1300 
+47	herohjk2	17	2018-10-05	1300 
+48	testuser	17	2018-10-05	1300 
+49	herohjk	17	2018-10-08	1300 
+50	herohjk2	17	2018-10-08	1300 
+51	testuser	17	2018-10-08	1300 
+52	herohjk	17	2018-10-10	1300 
+53	herohjk2	17	2018-10-10	1300 
+54	testuser	17	2018-10-10	1300 
+55	herohjk	17	2018-10-12	1300 
+56	herohjk2	17	2018-10-12	1300 
+57	testuser	17	2018-10-12	1300 
+58	herohjk	17	2018-10-15	1300 
+59	herohjk2	17	2018-10-15	1300 
+60	testuser	17	2018-10-15	1300 
+61	herohjk	17	2018-10-17	1300 
+62	herohjk2	17	2018-10-17	1300 
+64	herohjk	17	2018-10-19	1300 
+65	herohjk2	17	2018-10-19	1300 
+66	testuser	17	2018-10-19	1300 
+67	herohjk	17	2018-10-22	1300 
+68	herohjk2	17	2018-10-22	1300 
+69	testuser	17	2018-10-22	1300 
+70	herohjk	17	2018-10-24	1300 
+71	herohjk2	17	2018-10-24	1300 
+72	testuser	17	2018-10-24	1300 
+73	herohjk	17	2018-10-26	1300 
+74	herohjk2	17	2018-10-26	1300 
+75	testuser	17	2018-10-26	1300 
+76	herohjk	17	2018-10-29	1300 
+77	herohjk2	17	2018-10-29	1300 
+78	testuser	17	2018-10-29	1300 
+79	herohjk	17	2018-10-31	1300 
+80	herohjk2	17	2018-10-31	1300 
+81	testuser	17	2018-10-31	1300 
+82	herohjk	17	2018-11-02	1300 
+83	herohjk2	17	2018-11-02	1300 
+84	testuser	17	2018-11-02	1300 
+85	herohjk	17	2018-11-05	1300 
+86	herohjk2	17	2018-11-05	1300 
+87	testuser	17	2018-11-05	1300 
+88	herohjk	17	2018-11-07	1300 
+89	herohjk2	17	2018-11-07	1300 
+90	testuser	17	2018-11-07	1300 
+91	herohjk	17	2018-11-09	1300 
+92	herohjk2	17	2018-11-09	1300 
+93	testuser	17	2018-11-09	1300 
+94	herohjk	17	2018-11-12	1300 
+95	herohjk2	17	2018-11-12	1300 
+96	testuser	17	2018-11-12	1300 
+97	herohjk	17	2018-11-14	1300 
+98	herohjk2	17	2018-11-14	1300 
+99	testuser	17	2018-11-14	1300 
+100	herohjk	17	2018-11-16	1300 
+101	herohjk2	17	2018-11-16	1300 
+102	testuser	17	2018-11-16	1300 
+6	testuser	17	2018-09-03	1245 
+104	herohjk3	18	2018-11-05	1400 
+105	admin	20	2018-11-17	1630 
+106	herohjk3	18	2018-11-07	1400 
+107	herohjk3	18	2018-11-09	1400 
+108	herohjk3	18	2018-11-14	1400 
+109	herohjk3	18	2018-11-19	1400 
+110	herohjk3	18	2018-11-16	1400 
+111	herohjk3	18	2018-11-12	1400 
+112	herohjk	17	2018-11-19	1300 
+113	herohjk2	17	2018-11-19	1300 
+114	testuser	17	2018-11-19	1300 
+115	GeorgeWashington	19	2018-11-16	1500 
+116	GeorgeWashington	19	2018-11-19	1500 
+117	herohjk	19	2018-11-16	1500 
+118	herohjk	19	2018-11-19	1500 
+8	herohjk2	17	2018-09-05	1201 
+119	admin	20	2018-11-20	1630 
 \.
 
 
@@ -1071,7 +1186,7 @@ COPY public.attendancerecord (index, userid, courseid, checkdate, checktime) FRO
 -- Name: attendancerecord_index_seq; Type: SEQUENCE SET; Schema: public; Owner: herohjk
 --
 
-SELECT pg_catalog.setval('public.attendancerecord_index_seq', 3, true);
+SELECT pg_catalog.setval('public.attendancerecord_index_seq', 119, true);
 
 
 --
@@ -1184,7 +1299,7 @@ SELECT pg_catalog.setval('public.auth_permission_id_seq', 60, true);
 --
 
 COPY public.auth_user (id, password, last_login, is_superuser, username, first_name, last_name, email, is_staff, is_active, date_joined) FROM stdin;
-1	pbkdf2_sha256$120000$p6TbuhPdClBP$+kCZXE/RO3mGTiTsQS/RWB5xmX4bxk9glVAcugkt2x4=	2018-09-17 11:34:09.736569+09	t	herohjk			herohjk@herohjk.com	t	t	2018-09-17 11:19:01.612563+09
+1	pbkdf2_sha256$120000$p6TbuhPdClBP$+kCZXE/RO3mGTiTsQS/RWB5xmX4bxk9glVAcugkt2x4=	2018-11-19 13:31:44.419388+09	t	herohjk			herohjk@herohjk.com	t	t	2018-09-17 11:19:01.612563+09
 \.
 
 
@@ -1230,10 +1345,10 @@ SELECT pg_catalog.setval('public.auth_user_user_permissions_id_seq', 1, false);
 --
 
 COPY public.course (index, lectureindex, lectureroomindex) FROM stdin;
-1	herohjk	1
-2	herohjk	1
-4	testuser	1
-5	admin	1
+19	GeorgeWashington	1
+18	herohjk	1
+17	herohjk	1
+20	admin	1
 \.
 
 
@@ -1241,7 +1356,7 @@ COPY public.course (index, lectureindex, lectureroomindex) FROM stdin;
 -- Name: course_index_seq; Type: SEQUENCE SET; Schema: public; Owner: herohjk
 --
 
-SELECT pg_catalog.setval('public.course_index_seq', 5, true);
+SELECT pg_catalog.setval('public.course_index_seq', 20, true);
 
 
 --
@@ -1249,10 +1364,10 @@ SELECT pg_catalog.setval('public.course_index_seq', 5, true);
 --
 
 COPY public.courseinformation (courseindex, startdate, enddate, starttime, coursetime, classday, coursename, index) FROM stdin;
-1	2018-09-01	2018-12-31	1630	90	TFTFTFF	영어1	1
-2	2018-09-01	2018-12-31	1800	90	TFTFTFF	외국인 회화	2
-4	2018-09-09	2019-09-30	0100	90	FTFTFTF	새벽 수학 특강	3
-5	2018-09-01	2019-09-20	2330	90	FTFTFTF	심야 코딩 특강	4
+19	2018-11-15	2018-12-15	1400	60	TFTFTFF	영어 회화	18
+18	2018-11-01	2018-12-15	1300	60	TFTFTFF	영어2	17
+17	2018-09-01	2018-12-15	1200	60	TFTFTFF	영어1	16
+20	2018-11-16	2019-02-01	1500	90	FTFTFTF	수학1	19
 \.
 
 
@@ -1260,7 +1375,7 @@ COPY public.courseinformation (courseindex, startdate, enddate, starttime, cours
 -- Name: courseinformation_index_seq; Type: SEQUENCE SET; Schema: public; Owner: herohjk
 --
 
-SELECT pg_catalog.setval('public.courseinformation_index_seq', 4, true);
+SELECT pg_catalog.setval('public.courseinformation_index_seq', 19, true);
 
 
 --
@@ -1268,11 +1383,13 @@ SELECT pg_catalog.setval('public.courseinformation_index_seq', 4, true);
 --
 
 COPY public.coursestudent (couseid, userid, index) FROM stdin;
-1	herohjk	1
-1	testuser	2
-2	herohjk	4
-4	herohjk	5
-5	herohjk	6
+19	GeorgeWashington	11
+19	herohjk	13
+17	herohjk	14
+17	herohjk2	15
+17	testuser	16
+18	herohjk3	17
+20	admin	18
 \.
 
 
@@ -1280,7 +1397,7 @@ COPY public.coursestudent (couseid, userid, index) FROM stdin;
 -- Name: coursestudent_index_seq; Type: SEQUENCE SET; Schema: public; Owner: herohjk
 --
 
-SELECT pg_catalog.setval('public.coursestudent_index_seq', 6, true);
+SELECT pg_catalog.setval('public.coursestudent_index_seq', 18, true);
 
 
 --
@@ -1369,6 +1486,7 @@ SELECT pg_catalog.setval('public.django_migrations_id_seq', 18, true);
 
 COPY public.django_session (session_key, session_data, expire_date) FROM stdin;
 q44aiv8do2a1zrw0s3697z8n7wtc2ruu	NTIwNWNlZTU4MDgwZTk2MjY5OGNmZjZhNmI5ZmFkODE0MGIxNDRkNDp7Il9hdXRoX3VzZXJfaWQiOiIxIiwiX2F1dGhfdXNlcl9iYWNrZW5kIjoiZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5kcy5Nb2RlbEJhY2tlbmQiLCJfYXV0aF91c2VyX2hhc2giOiJhYzM0NmUyMzU4MjFkYWZjOWRhYmJmZWU2ODQ0ZDNkN2VmMzZkOWI0In0=	2018-10-01 11:34:09.746562+09
+9b23hrnhvk4p2ob9c0ym66hzk09upm6u	NTIwNWNlZTU4MDgwZTk2MjY5OGNmZjZhNmI5ZmFkODE0MGIxNDRkNDp7Il9hdXRoX3VzZXJfaWQiOiIxIiwiX2F1dGhfdXNlcl9iYWNrZW5kIjoiZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5kcy5Nb2RlbEJhY2tlbmQiLCJfYXV0aF91c2VyX2hhc2giOiJhYzM0NmUyMzU4MjFkYWZjOWRhYmJmZWU2ODQ0ZDNkN2VmMzZkOWI0In0=	2018-12-03 13:31:44.433368+09
 \.
 
 
@@ -1377,7 +1495,8 @@ q44aiv8do2a1zrw0s3697z8n7wtc2ruu	NTIwNWNlZTU4MDgwZTk2MjY5OGNmZjZhNmI5ZmFkODE0MGI
 --
 
 COPY public.lectureroom (index, nfcid, latitude, longitude, name) FROM stdin;
-1	proto001	37.5100564999999975	126.888547200000005	테스트교실
+1	proto001	37.5100564999999975	126.888547200000005	실코
+3	proto002	37.5100564999999975	126.888547299999999	실코트
 \.
 
 
@@ -1385,7 +1504,7 @@ COPY public.lectureroom (index, nfcid, latitude, longitude, name) FROM stdin;
 -- Name: lectureroom_index_seq; Type: SEQUENCE SET; Schema: public; Owner: herohjk
 --
 
-SELECT pg_catalog.setval('public.lectureroom_index_seq', 1, true);
+SELECT pg_catalog.setval('public.lectureroom_index_seq', 3, true);
 
 
 --
@@ -1419,6 +1538,8 @@ COPY public.notice (index, message, "user", date, "time") FROM stdin;
 18	다얄로그 테스트4\r\n	herohjk	2018-10-12	14:20:31
 19	test\r\n	herohjk	2018-10-12	14:21:28
 20	tttt5\r\n	herohjk	2018-10-12	14:22:21
+21	asdfasdfasdf\r\n	herohjk	2018-10-19	14:29:16
+22	전달사항 테스트\r\n	herohjk	2018-11-16	19:29:47
 \.
 
 
@@ -1426,7 +1547,7 @@ COPY public.notice (index, message, "user", date, "time") FROM stdin;
 -- Name: notice_index_seq; Type: SEQUENCE SET; Schema: public; Owner: herohjk
 --
 
-SELECT pg_catalog.setval('public.notice_index_seq', 20, true);
+SELECT pg_catalog.setval('public.notice_index_seq', 22, true);
 
 
 --
@@ -1436,7 +1557,14 @@ SELECT pg_catalog.setval('public.notice_index_seq', 20, true);
 COPY public."user" (id, password, admin) FROM stdin;
 admin	da18d4abcfab1f1abfb19697a332324d	t
 testuser	098f6bcd4621d373cade4e832627b4f6	f
+test2	c68d2718cd3e38a4acaa668699419f0d	t
+herohjk2	c68d2718cd3e38a4acaa668699419f0d	t
+test3	94a8bdf92ef9ba9de0d6593290db5fcd	f
+test4	81dc9bdb52d04dc20036dbd8313ed055	f
 herohjk	24dbfc35919dfa3b926d2b3fda619c55	t
+GeorgeWashington	25d55ad283aa400af464c76d713c07ad	t
+herohjk3	2a85fd87d2c5872482386723e7f4e19b	f
+test	098f6bcd4621d373cade4e832627b4f6	t
 \.
 
 
@@ -1445,9 +1573,16 @@ herohjk	24dbfc35919dfa3b926d2b3fda619c55	t
 --
 
 COPY public.userinformation (id, address, phonenumber, name) FROM stdin;
-herohjk	(03410) 서울시 은평구 서오릉로 181	01089492160	김호종
-admin	청와대ㅎㅎ	01000000000	운영자
-testuser	백악관	01000000000	테스트 계정
+testuser	굴다리 10초준다 9초 안된다 11초 뒤진다	010-존내-맞는거다	싱하형
+test2	췍!	01000000000	힙통령
+herohjk2	ㅎㅎㅎ 잘부탁드림!	01000000000	홍찰찰
+test3	토트넘	01012341234	손흥민
+test4	우리집	1234	홍길동
+admin	독도는 우리땅!!	01000000000	운영자
+herohjk	신도림  푸르지오	ghwhd1	김호종
+GeorgeWashington	America	12345678	조지와싱턴
+herohjk3	서울	010-1234-1245	홍길동
+test	test	test	test
 \.
 
 
